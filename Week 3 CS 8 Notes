@@ -1,0 +1,148 @@
+*Week 3 CS 8 Notes
+
+
+Control Structure: high level design, of which statements execute when
+
+    Sequence Structure: when we execute all statements top to bottom, in order
+
+    Decision Structure: certain statements that execute and certain that dont, depend on conditios. Contions dictate that some statements may or may not be executed.
+
+        Condtion >>> tree>>>if >> back to flow
+
+
+IF STATEMENT:
+
+        if condition: [if clause]
+            *indent statement
+            statement [block]
+            statement [block] *all this subject to the condition, only execute if the condition is == TRUE
+        statment *this done regardless of condition [these will execute always]
+
+    spaces and tabs taken seriously
+
+    Example:
+
+    if True:
+        print("yes")
+
+    if False:
+        print("no")
+
+    More Compliacate boolean expression:
+
+    debug=True *reffered to as a flag
+        statemtn
+        statement
+        statement
+        if debug :
+            print("the value of a is", a)
+
+All those lines are skipped*
+     debug=False *reffered to as a flag
+        statemtn
+        statement
+        statement
+        if debug :
+            print("the value of a is", a)
+
+
+Relational Operators: return a boolean
+    < less than  <=
+    > greater than >=
+    == equal to
+    != not equal
+
+Logical Operators: take two boolean values and return boolean values Truth tables
+    and p and q = True
+    or  p or q = one of more is True
+    not (negation) flips
+
+Python does shortcircuiting
+
+****
+p and q if it knows p is False then it knows that the statment is False, doesnt even evaluate the right
+
+if balance > 0 and
+    amount_to_send <= balance:
+
+if my balance is 0 it stops
+
+*
+if balance >0 and  *two boolean
+    int(input("send how much"))<=balance *boolean, sideeffects
+
+In this case if the right doesnt execute the user doesnt know what happened
+
+
+***
+***
+
+Single-alternative decision structure: one block, on or off IF
+
+>>> if 'bill' > 'Phil':
+...     print("greater")
+>>> if not ('bill'>'Phil'):
+...     print("not greater")
+
+Double-alternative decision structure: two block one or the other  IF ELSE
+
+>>> if 'bill' > 'Phil':
+...     print("greater")
+... else:
+...     print('not greater')
+...
+greater
+
+
+#Rouletter Wheel example
+
+q % r
+
+remainder of
+
+Short Circuiting:
+
+True or _
+
+
+#dual alternative
+
+true < condition > false
+then join
+
+
+#if elif else
+
+if n == 0
+    print("green")
+elif is_even and odd_is_red:
+    print("black")
+elif is_odd and odd_is_red:
+    print("red")
+elif is_even:
+    print("red")
+else:
+    print("black")
+
+
+Does this make it easier to read?
+Probably not
+
+
+if cond 1:
+    statments
+elif cond 2: (and not cond 1)
+    statements
+elif cond 3: (and not cond2 and not cond 1)
+else: (not satisfied any of the previous conditions)
+    statements
+
+
+alternative, would require a lot of
+if cond 1:
+    state
+else:
+    if cond2:
+    else:
+        if cond3:
+            else:

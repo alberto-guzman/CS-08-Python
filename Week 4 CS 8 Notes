@@ -1,0 +1,72 @@
+Week 4 CS 8 Notes
+
+Repetition Structure
+    Control structure allowing statements to execute mutltiple times
+    Keep doing the same task over and over again
+    Why is it bad to have redundant code?
+        -increase size of the program
+        -makes debugging harder
+        -code maintainance
+    Condition in diamond, and a loop if the condtion is True
+        -called a condition controlled loop: b/c we are checking a condition and deciding when to stop based on the condition
+
+    Infinite Loop: program never stops because the condition is always true
+    Ctrl + C breaks the execution
+
+    Syntax: while condition: <- while clause
+                        statement
+                        statement
+
+Interation of a loop is one complete execution of the repeated block
+Pre-test Loop: wont even execute if the condition is False when it starts
+
+Priming assignment: something we have to do so that you go into the loop
+
+Ex:
+a = False
+while a == False:
+    a = True
+    a = not a
+
+
+Ex:
+
+password = 'No' <- priming assignment
+password = input('Password?') <- priming input
+
+while password != 'bills password':
+    password == input('nope try again')
+print(all_bills_secrets)
+
+Ex Perfect square:
+
+val = 0
+while val < 100:
+    if is_square(val):
+        result=val
+    val = vall + 1
+
+
+# ask the user for a number
+# add the number to a running total
+# ask if the use has more numbers to enter (if yes, repeat)
+
+total = 0  # accumulator
+
+more = 'y'
+while more == 'y':
+    num = int(input('What is the number?'))
+    total += num  # agmented assignment
+    more = input('do you have more(y/n?')
+
+print('total:' + format(total, '3d'))
+
+
+Agmented assignment:
+
++=
+-=
+*=
+/=
+//=
+%=

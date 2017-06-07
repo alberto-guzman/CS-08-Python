@@ -1,0 +1,194 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CS 08 Notes\
+\
+*********************\
+Week 1 Notes:\
+*********************\
+\
+-general purpose was the point of computers\
+-computers can be programmed after they are built\
+-Program: set of instructions, tells the computer how to do something\
+-programmers build the software\
+\
+-physical component is the software, all the physical parts of the machine, even remotely\
+-part of a computer\
+	-cpu: central processing unit, executes the commands\
+	-main memory: the sheet of instructions, meant for processing\
+	-secondary storage: allows the computer to store things in between executing a program\
+	-IO devices: input output devises, the computer uses to read things out,screen, meters\
+\
+\
+CPU\
+-most important part of the machine\
+-runs the software\
+-micro processors: cpu that run on small chips\
+-main memory: temporaly stores all the stuff (volatile) storage, needs to be powered\
+			-stores software and data while it is being processed\
+			-very fast\
+			-RAM: random access memory\
+\
+Secondary storage: non-volatile but much slower\
+	-no random access\
+	-will remember\
+	-stores programs and data in between executions\
+	-but cant access it directly from the CPU, needs to be brought into main memory\
+\
+\
+I/O devices\
+	-communication devices, input and output\
+	-lets you get something out of the machine, printed, sent over the could, etc.\
+	Input: give the computer information\
+		-keyboard\
+		-mouse\
+		-mic\
+		-camera\
+		-controllers\
+		-network device\
+		-NIC: network interface card\
+		-GPS\
+		-touchscreen\
+\
+	Output: computer gives us information\
+		-speakers\
+		-haptic\
+		-NIC\
+		-display\
+		-printer\
+\
+\
+Software\
+\
+	-Systems Software: put in charge of communication between hardware components, and cordinate. What you need\
+	-Application Software: get things out of the computer. What you want, Apps, everyday programs\
+	-Operating System(kernal): giving access to the CPU, operator does things in the backgrounds\
+		-talks to hardware\
+		-manage proceses\
+		-sections up the main memory\
+		-utility programs: things we dont need but make something easier, antivirus, taskbar, notification tray, built on top of the kernal\
+	-Software Dev Utilities\
+\
+Text/Characters (encoding)\
+Storage-how it works? Encode stored...0/1 is a bit\
+	-computer stores things in one or two states 0/1\
+	-fewer choices, more storage, binary you need a lot!\
+	-high vs low voltage (main memory)\
+	-hardrive north or side magnitude applied\
+	-CD: tiny bumps\
+	-8 bits in a row form a byte (256 options) 2^8\
+		-originally used for individual characters\
+		-you can fit alphabet, uppercase, etc. Encoded in ASCII - international standard in 8 bit or byte (128 letter codebook)\
+	Unicode (modern) - superset of ASCII + 127 you need this + this. more expressive. Does not do styling like bold, bigger, etc. Backward compatible\
+\
+\
+Numbers (encoding)\
+	-32-bit mostly used (4 bytes in a row) 2^32\
+	-Twos-complement: integers - and + same size but extends the left half be negative (can only do integers -2^31 > 2^31-1)\
+	-Floating point notation: allows decimels\
+		-more bits, encodes real numbers\
+	-can end up with rounding errors\
+\
+\
+	-356210 you would need to explain places 0 represents 10^0 1 10^1 base 10 example: decimal\
+	-Binary: 101110011 each represent one more  2^0 2^1 2^2...2^8 right to left\
+	-1 2 4 6 16 32 64 128 256\
+\
+\
+	-10111: 16 4 2 1 :23\
+	-10000 :16\
+	-10101: 21\
+\
+	47/2=23        101111  REMAIDER 1 no remainder 0\
+	36: 100100\
+\
+	Exam:\
+\
+	200 subtraction method\
+\
+		256 128 64 32 16 8 4 2 1\
+		0    1   1  0  0 1 0 0 0\
+		drop leading 0: 11001000\
+\
+	-engineering wise it was easier to do two volt stage, it reduces error\
+	-twos compliment: lets you encode negative values\
+	-floating point: real numbers, decimals (approximation)\
+\
+\
+Digital Storage\
+	Images :\
+		-clean cut seperation we cant zoon in to infinity, so we need to cut it up into discrete things (pixels)\
+		-we make grids and fill in each grid with one color or another\
+		-went from black and white\
+		-then went to colors of gray\
+		-eveyrthing by base 2\
+		-modern: RGB (combined to make many colors)\
+		-encode each pixel as a sereies of numbers\
+		-RGB: red, green, blue channel (screen is additive instead of paint which is substractive)\
+			-printing uses CMY: cyan, magenta, yellow\
+	Video:\
+		-bunch of images, GIF, inneficient\
+		-modern "keyframes": just give you a key frame and tell you what pixels changed between frames, then new image\
+		-we also use compression now, to save space\
+\
+	Audio: (continous)\
+		-sampling rate: discretise the conitnous wave times/sec, cuts up the wave, and skips the rest\
+		-converts the slices into binary, its a number to represent the wave\
+\
+\
+How does a CPU work?\
+	-indidual little task, voltage\
+	-processes data in small precise ways\
+	-tasks = instructions\
+	Cycle: Fetch, decode, execute\
+	-fetches an instruction from main memory\
+	-decode: finds out what it needs to do\
+	-execute: does the instructions\
+	-trends: smaller and more instructions and multiple cores\
+\
+	-instructinos are written in binary but its hard to write because it makes sense to the computer not us (Machine Code) the language the CPU understands - CPU specific\
+\
+Assembly language: different encoding for those instructions that get translated to machine code later\
+	-mnemonics to help people write machine code > sends to assembler that does the translating\
+Machine and Asembly language are LOW level languages\
+\
+\
+High Level Languages: closer to english, humans can write them, can acomplish more in alot fewer words (effecient)\
+	-we don't need to know the CPU instructions\
+\
+	Compiler: takes high level language to assembly language\
+	Imterpreter: takes high level and takes it to machine code\
+\
+\
+\
+Key Words: reserved sequence of characters - words that mean a things such as loop, etc.\
+Operators: some computation to happen + - this is bigger than that, and or (logical operators) mathmatical, logical, rarely flow\
+Syntax: rules to combine languagage features to write programs (what can we write and what we cant)\
+\
+Statement: equivilant of instructions in high level langauge\
+\
+\
+Source code: your program in a high level language\
+-secret you can compile and distrube that versus the source code\
+\
+Python is a interpreter language\
+C is a compiler language\
+\
+\
+Python\
+-batch and interactive mode\
+\
+Interactive mode: keeps everything in memory runs real time, useful to test new things\
+\
+>>> print(7+5)\
+\
+\
+Batch: .py a program\
+\
+\
+\
+}

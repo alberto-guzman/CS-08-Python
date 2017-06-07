@@ -1,0 +1,186 @@
+
+
+*********************
+Week 2 Notes:
+*********************
+
+
+Program Development Life Cycle
+
+1. Design
+		2. Write Code
+		3. Correct Syntax
+		4. Test Program
+		5. Correct logic errors (program does not behave the way we want it to)
+
+
+		Design > Algorithm
+		Algorithm: sequence of steps that if executed correctly, solves our problem
+
+		Write Algorithm:
+		Pseudocode: fake code, informal progrmaming language ment to be read by humans. Describes what our eventual code should do.
+		FlowCharts: graphical. Diagram, representing an algorithm graphically
+
+		Start
+
+		Input "parallelogram"
+		Compute "rectangle"
+		Ouput "parallelogram"
+
+		and
+
+		End
+
+		Principled of Problem Solving:
+			Plan Ahead: why am i solving it in this particular way
+			Restate
+			Divide the problem
+			Start with what you know
+			Reduce:
+			Look for Analogies
+			Experiment:
+			Not to get frustrated:
+
+
+Functions: black box, for eaxmple print()
+
+
+print()
+what goes inside () argument
+
+
+Fuctions referred to as the parameter
+Numeric literals: 2, 1.3
+String Literals: '' ""
+
+
+Hello, I'm known as "bill"
+
+'''Hello, I'm known as "bill"'''
+
+\ escape character
+'Hello, I\'m known as "bill"
+
+
+
+Comment #
+
+#this is a comment
+
+Variable: named reference to a value in memory
+
+Assignment statement
+	my_var =  5
+	left(var name) right(expression)
+	my_variable = my_variable + 2
+	5 gone now 7
+
+Variable Name
+	-letters, digits, underscore
+	-case sensitive
+	-cannot be a keyword
+	-cant start with digit
+
+
+	underscore notation: total_cost
+	camel: totalcost
+
+Data Types
+	-int: integer (twos compliment) 7
+	-float: real numbers (floating point notation) 7.0
+	-bool: loolean values (true or false)
+	-str: string, sequence of characters  ''
+
+
+Algorithms
++
+-
+*
+/
+** (exponent)
+// integer division
+
+int and float, python promotes to the more expressive language
+
+"abc" * 3  "abcabcabc"
+"5"*5 "555555"
+
+
+Convert to int
+int('5')*5
+
+
+Output Information
+	print()
+	print('this is your grade',grade) adds seperator
+	this is your grade 72
+
+	print('It cost$',price,sep=''')
+	its cost $12.0
+	sep = is called a optional named argument
+
+	Dont end the line after you print this
+	print('price: $', end ="")
+
+	Ask for an input, what they enter get stored in grade, now matches type
+	grade = input("Grade:"")
+	grade = int(grade)
+	print(grade + 5)
+
+	Consolidate
+	grade = int(input("Grade"))+5
+
+
+	input()
+	always comes in as a string
+
+
+Formatting:
+
+>>> format(24, '8')
+'      24'
+>>> format(24, '8')
+'      24'
+>>> format(24, '8d')
+'      24'
+>>> format(24, '8f')
+'24.000000'
+>>> format(24, '8.3f')
+'  24.000'
+>>> format(24, '<8.3f')
+'24.000  '
+>>> format(24, '>8.3f')
+'  24.000'
+>>> format(24, '.>12s')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: Unknown format code 's' for object of type 'int'
+>>> format(24, '.>12d')
+'..........24'
+>>> format(24, '.>12b')
+'.......11000'
+>>> format(int(24), '.>12b')
+'.......11000'
+>>> format(int(24), '.>12f')
+'...24.000000'
+>>> format(int(24), '.>12.1f')
+'........24.0'
+>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
