@@ -61,6 +61,8 @@ while more == 'y':
 
 print('total:' + format(total, '3d'))
 
+This is a count controlled loop
+
 
 Agmented assignment:
 
@@ -70,3 +72,121 @@ Agmented assignment:
 /=
 //=
 %=
+
+
+for loop
+
+    ex:
+
+    for var in sequence:
+
+    ex:
+
+    for letter in 'bill':
+        print('letter')
+
+B
+i
+l
+l
+
+
+    ex: list literal
+
+    for i in ['cat',7,True]:
+        print('i')
+
+ cat
+ 7
+ True
+
+#list within a list
+     for i in ['cat',7,True,[list]]:
+        print('i')
+
+ cat
+ 7
+ True
+
+
+ex: double loop, nested loops
+
+for word in ['cat','dog','mouse']:
+    for letter in word:
+        print(letter)
+
+c
+a
+t
+d
+o
+g
+
+#the inner loop will repeat for every value of the outer loop
+
+
+#indentations become very important in python, example
+
+for animal in ['cat','dog','mouse']:
+    print(animal+'is spelled:')
+        for letter in animal:
+            print(letter)
+        print('done!')
+
+cat is spelled
+c
+a
+t
+done!
+
+
+
+#range
+for temp_c in []:
+
+
+#assumes you start at 0 and is enclusive
+range(5)
+0 1 2 3 4
+
+range(1,5)
+1 2 3 4
+
+range(1,6)
+1 2 3 4 5
+
+range(0,20,4)
+0
+4
+8
+16
+
+
+# temp_c is only a loop variable, only exist in the loop
+
+for temp_c in range(0,101,5):
+    print(temp_c+____+____)
+print('final temp:', temp_c) # wont work
+
+
+#count down with range
+range(10,-1 ,-1)
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+
+for i in range(5,1,-1):
+    print('o'*i)
+
+5,4,3,2
+00000
+000
+0
