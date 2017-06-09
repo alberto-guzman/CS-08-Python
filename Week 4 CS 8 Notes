@@ -190,3 +190,11 @@ for i in range(5,1,-1):
 00000
 000
 0
+
+
+
+letter = input('what letter?')
+friends = ['alice','bob','charlie','dina','edgar']
+
+#print yes if the entered letter is in any of the names
+#print no otherwise
