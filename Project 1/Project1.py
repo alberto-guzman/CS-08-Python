@@ -17,7 +17,7 @@ else:
     # prompt for number of times
     num_items = int(input("Number of items:"))
 
-# prompt for items price
+# prompt for items price and loop
     for i in range(1, num_items + 1):
         taxable_total = float(input("Item Price ($):"))
         apply_tax = input("Is item taxable (y/n)?")
@@ -29,7 +29,7 @@ else:
     # calculate tax owed
     tax = taxable_subtotal * (tax_rate / 100)
 
-    # print
+# print
 print('Subtotal: $', format(taxable_subtotal + nontaxable_subtotal, '4.2f'))
 print('Tax: $', format(tax, '4.2f'))
 print('Total:$', format(taxable_subtotal + nontaxable_subtotal + tax, '4.2f'))
