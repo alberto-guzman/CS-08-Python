@@ -1,0 +1,92 @@
+#Chapter 5
+
+Functions
+local vars:
+
+    def aa():
+        b = 7 #local variables
+        c = 10
+        ba()
+
+    def ba():
+        c = 12
+        b = 8
+
+
+def main ():
+    b = 3  #these are local, only live in the function
+    c = 5
+    a()
+    ba()
+    print(c) #c scope is 5
+    print(b)
+
+    #call to main
+    main() 14
+
+scope: where does the variable exist, or what code can see those variables
+
+function calls are found in a stack:
+
+activation records/stack framing: represent one method call
+
+
+-keeps a list
+    -first call is to aa stores the var, parameter values
+-global variables: found outside
+#dont use global variables!!!
+
+examples:
+
+#these are parameters
+
+def fn1(param1, param2):
+    print(param1)
+    print(param1+param2)
+
+fn1(5,3)
+#5 and 3 are both arguments
+
+parameter: is the variable inside the function that will hold the value
+argument: is the actual value iteself when you call the function
+
+
+#
+print(a,b,sep = '')
+
+def multiply(operand1,by = 10):
+    return operand1 * by
+
+#call it
+multiple(5,8)
+40
+
+multiple(10)
+100
+
+multiply(5, by = 15)
+75
+
+
+Optional arguments: moves away from order
+
+    def compound_interest(principal = 0, apr  = 0, time = 0):
+
+#calling it, because you can use keywords
+compound_interest(principal = 1000, time = 10, apr = 0.02)
+#but you can also use order
+con_int(1000,0.02, 10)
+# or
+com_int(1000) #will run
+
+#positional values called without keywords need to be called first #important
+
+
+Module: bit of code
+
+>>> import random
+>>> random.randint(0,5)
+3
+>>> #this is called . notation
+...
+>>>
