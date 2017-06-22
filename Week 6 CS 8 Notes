@@ -1,0 +1,121 @@
+#Chapter 6 File IO
+
+Writing to a file (save soemthing)
+    file output
+    -open file for writing
+    -save information
+    -close file
+
+
+> Reading from a file
+    file input
+    -open a file for reading
+    -process information
+    -close file
+
+File Types:
+-plain text files: read and write strings of characters
+-binary file: read and write arbritary bytes
+
+Sequential access: read or write in order
+Direct access: jump around in the file
+
+
+How to do this:
+    -File Object: stores location of file contents
+    -create a file object (specific thing that contains data and operations on that data)
+    -provides operatios for manipulating the contents
+
+    this_file > somewhere in memory, locations >>>> disk
+
+    var = open(filename,'r')
+    r = read
+    w = over-write
+    a = append
+    wb = write in binary
+
+    inside a loop
+    loops/my_file.txt
+
+    outside a folder
+    ../board.su
+
+    Absolute Path
+    /users/folder/folder/test.py
+
+#open a file in read mode
+var.read() call the read function on this object
+# this is reffered to as a method: funtions called on objects
+
+#want to keep a file open for as little as possible, if you read it you leave it open, because the disk is super slow!
+var.close() stops the link to the harddrive, flushes it to disk
+
+#steps
+-open
+-process
+-close file
+
+
+
+#read just a line
+contents = var.readline() #keeps advancing to next line
+
+#writing a file
+
+var = open('other_file.txt','w')
+var.write(value) #this only takes in strings
+var.close()
+
+#the os will not write until its conveneitn to it
+
+#reset to a begining of a file
+new_file = open('est.txt','r')
+text = new_file.read()
+text
+
+
+file_object = open('test.txt','w')
+file_object.write('This is a new line.\n') #moves it to a new line
+
+
+
+reading = open('test.txt','r')
+reading.read #reads in one long sentence
+
+#or
+reading.close()
+reading = open('test.txt','r')
+reading.readline() #will return one line but with \n
+
+line = reading.redline()
+line.rstrip('\n') left l right r
+# doesnt remove it, you need to overite it
+line = line.rstript('\n')
+
+
+#do all this in one step
+line = reading.readline().rstrip('\n') . do this on the result
+
+#go to the end of the file
+
+#making file with blank lines
+
+#loop o
+
+blank_test = open('blank.txt','r')
+#primging contents = blank_test.readline()
+while content != ' ':
+    print(contents)
+    contents = blank_test.readline()
+
+
+#print will keep adding a new line
+#try this
+
+
+blank_test = open('blank.txt','r')
+#primging contents = blank_test.readline()
+content = content.rstrip('\n')
+while content != ' ':
+    print(contents.rstript('\n')
+    contents = blank_test.readline()
