@@ -1,0 +1,64 @@
+Exceptions
+-error that occurs while the program is running
+-it will create an exeption object, trow that exception
+
+main()
+fucntion1()
+other_fn()
+something()
+
+-keeps getting passed up, if main cant handle it the program crashes
+
+-exeption describes the error
+-the problem gets escalated all the way up
+
+
+try:
+
+-preps python to know it might not work
+
+try:
+    nume = int(input('number:')) #called the try suite, what could cause an exeption
+except:
+    print("not a number, using 0" #handler, how it trys to handle the error
+    num = 0
+
+-this recovers fromt the stop in execution
+-if the try is done well, then it sips the exemp block
+
+try:
+    num = int(input('num'))
+except:
+    num = int(input('num'))
+
+#this wont work because its outside the try, this will cause the error to escalate all the way up
+
+success = False
+while not success:
+    try:
+        num = int(input('Num:'))
+        success = True
+    except ValueError: #if a value error happens this is what you should do
+        pass #no operation, just passes
+
+    excep FileNotFoundError:
+        pass
+    except: #this will catch anything else
+
+
+    #catches it and doesnt do anything, keeps looping until its right
+
+-except with no name, says I want to catch everything. if anything goes wrong inside the try suite, this is where I go
+
+excep ValueError as err:
+-this will assign the value error to a var named err
+    print(err)
+
+
+
+#final clause
+
+finally: somefile.close()
+
+-no matter what happened do this!
+-helps to close files when you want to close something
