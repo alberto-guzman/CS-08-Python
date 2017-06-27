@@ -1,12 +1,17 @@
 def main():
-    name, account
-    while true:
+    # ask for name
+    name = input('What is your name?')
+    # set account to 1000
+    account = 1000
+    # while loop
+    while account != 0
+        play_hand(name)
         account += play_hand(name)
         if account <= 0:
                 break.
         else:
-            play again?
-         play again = y
+            play_again = input('Do you want to play another hand?')
+            play_again = y
          while play_again = y
             account += play_hand(name.play)
             if
@@ -43,3 +48,4 @@ Check to see who wins and who lose with 4 conditions
 2. dealer bust 25
 3 player wins/loses 25/-25
 4. push 0
+
