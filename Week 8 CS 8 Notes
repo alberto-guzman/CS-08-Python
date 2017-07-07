@@ -1,0 +1,83 @@
+#List Data Structures
+
+
+var > 7
+lst > [1,2,3]
+
+#this id not how they are stored in practice
+
+List is an object and you can call methods on it
+.append
+.remove
+.sort
+
+my_list = ['a','b','c']
+
+rev_list = mylist #copy but it stores a memorty address to an object
+
+rev_list.reverse() #c, b, a
+
+print(my_list)
+c b a, it reversed the list, its because the rev_list pointed to an object , both of the point to the same object
+
+
+#tuple example
+my_tup = ('a','b','c')
+other = my_tup
+
+#still have have
+my_tup
+other
+-both point to one tuple object a b c, its imutable because its a tuple
+
+#can do this
+other = revered(my_tup)
+print(other)
+
+#new assignment, its the only way to redo something that imutable
+
+#how to
+
+#write a loop
+
+rev_list = []
+for e in my_list:
+    reve_list.append(e)
+
+#copy concatenate
+rev_list = [] + my_list
+
+#slicing (prof way)
+rev_list = my_list[:] #give me everything in my list
+
+
+#####
+#list containing list
+#####
+
+a = [[1,2],'b']
+
+object with string b and a list 1,2
+
+#we use this to represent 2 dimentional sequences
+
+#8x8 grid
+board =  []#2d list
+board.append (['']*8) append and empty string 8 times, creates one row
+
+or
+
+for i in range(8):
+    board.append(['']*8)
+
+or
+for i in range(8):
+    board.append([])
+    for j in range(8):
+        board[i].append('')
+
+#index
+board[3][5]='p'
+
+########################interactive mode##################
+

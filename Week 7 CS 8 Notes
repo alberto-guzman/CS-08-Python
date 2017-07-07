@@ -62,3 +62,285 @@ finally: somefile.close()
 
 -no matter what happened do this!
 -helps to close files when you want to close something
+
+
+
+#CHAPTER 7
+list and tuples
+
+Sequence ordered collection of values
+    -list: sequence that we can change (mutable)
+    -tuple: sequence that is immutable = cant be changed, run faster becauase they dont change
+
+    a = 5
+    a = a + 2
+    name = 'bill'
+    name = name + 'garrison'
+    not really changing the string but making a new thing therefore it is immutable
+
+    -you can change a file object or where it looks
+
+
+#how to manipulate lists
+ my_list = [5,'bill',7.3,True]
+
+
+ my_list > list object > will point to all 4 values
+
+ print(my_list)
+
+ #turn something into a list
+ other = list('hello')
+ other > list > h e l l o
+
+ r = list(range(3))
+ r > list > 0 1 2
+
+r = r * 2
+
+0 1 2 0 1 2 0 1 2
+
+* for list is the repetition operator
+
+#indexing [] we index from 0
+
+b = my_list[0+2]
+5 +2 = 7
+b
+7
+
+#assign
+my_list[1]='Bill'
+now it made it uppercase and replaced it
+
+#replace a value with another list
+my_list[3]=[1,2,3]
+will create a list inside of a list, it will be a list in index 3
+
+#arithmetic on list on list
+my_list[3][0]
+
+#looking at list from the end
+my_list[-1]
+last value of the list
+
+#get lenght of a sequence
+print(len(my_list))
+4
+
+#finding the negative index
+In general,
+list[i]==list[-(len(list)-i)]
+take the postive index negative and it give you the negartive index
+
+#delete statement
+del my_list[2]
+will remove the position and everything will shift
+
+
+#slicing, end up with copy
+
+    #give me everything in this list from here to here
+    list[start:end]
+    inclusive and exclusive
+
+    #for everything
+    my_list[0:3]
+
+    start default is = 0
+    end default is = len(list)
+
+#this will give me everything
+    my_list[:]
+
+#first 3 elements
+    my_list[:3]
+
+#last 3 elements
+    my_list[-3:]
+
+#concatanate 2 list
+
+[0,1,2] + ['a', 'b','c']
+0 1 2 a b c
+
+#iterate through a list
+
+
+#augment assignment
+my_list += other[2:-2]
+
+
+
+################
+Methods for list object
+################
+
+
+append(elem)
+index(elem) #search for something and tell you the first occurance, is it in my list
+
+#true or false
+(elem in my_list)
+true or false
+
+insert(index,elem)
+insert([2],5) inser it in the new position
+
+#remove
+remove(elem) remove it when you find it, first ocurance
+value error if not found
+
+del list[list.index(elem)]
+same as
+list.remove(elem)
+
+
+#it read it from left to right
+
+
+
+###
+notes
+###
+
+>>> my_list = [7,8,9,10]
+>>> list(my_list)
+[7, 8, 9, 10]
+>>> my_list == list(my_list)
+True
+>>> my_list == [7,8,10,9]
+False
+>>> my_list < [7,8,10,9]
+True
+>>> list('my name is bill')
+['m', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'b', 'i', 'l', 'l']
+>>> #created a list of character
+...
+>>> my_list[0]='something'
+>>> my_list
+['something', 8, 9, 10]
+>>> my_list.append(True)
+>>> my_list
+['something', 8, 9, 10, True]
+>>> #adds stuff to the end
+...
+>>> my_list.insert(2,700)
+>>> my_list
+['something', 8, 700, 9, 10, True]
+>>> del my)list[3]
+  File "<stdin>", line 1
+    del my)list[3]
+          ^
+SyntaxError: invalid syntax
+>>> delmy_list[3]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'delmy_list' is not defined
+>>> del my_list[3]
+>>> my_list
+['something', 8, 700, 10, True]
+>>> 700 in my_list
+True
+>>> 700.0 in my_list
+True
+>>> my_list.index(700)
+2
+>>> #its at index 2
+...
+>>> #try except
+... try:
+...     my_list.index(7)
+... except ValueError as e:
+...     print('there was an error')
+...     print(e)
+...
+there was an error
+7 is not in list
+>>> #slicing
+...
+>>> my_list[-100]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> #slicing trys to do its best job
+...
+>>> my_list
+['something', 8, 700, 10, True]
+>>> my_list[:]
+['something', 8, 700, 10, True]
+>>> #give me a copy of the list
+...
+>>> my_list[2:]
+[700, 10, True]
+>>> #everything but the first two elements
+...
+>>> my_list[:-2]
+['something', 8, 700]
+>>> #everything but the last two
+...
+>>> my_list[1:3]
+[8, 700]
+>>> my_list[-4:-1]
+[8, 700, 10]
+>>> my_list[-4:100]
+[8, 700, 10, True]
+>>> #doesnt give you an errror, it gives you whatever it wants
+...
+>>> #dont slice and assume the size of the list
+...
+>>> my_list[5:10000]
+[]
+>>> #out ob bounds
+...
+>>> ######### toples
+...
+>>> #make somthing into toples
+...
+>>> tuple(my_list)
+('something', 8, 700, 10, True)
+>>> #now uses round brackets
+...
+>>> my_tup = tuple(my_list)
+>>> my_tup[0]
+'something'
+>>> my_tup[;3]
+  File "<stdin>", line 1
+    my_tup[;3]
+           ^
+SyntaxError: invalid syntax
+>>> my_tup[:3]
+('something', 8, 700)
+>>> #you can treat it like a list until you try to modify it
+...
+>>> my_tup.append(10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'append'
+>>> #you cant change a tuple
+...
+>>> my_tup == my_list
+False
+>>> #false but not the same because they are different data types
+...
+>>> #function to compare
+...
+>>> def compared(seq1,seq2):
+...     if len(seq1) != len(seq2)
+  File "<stdin>", line 2
+    if len(seq1) != len(seq2)
+                            ^
+SyntaxError: invalid syntax
+>>> #this also creates a tuple
+...
+>>> (1,2,3,4)
+(1, 2, 3, 4)
+>>> ('bill')
+'bill'
+>>> #this is a literal
+...
+>>> ('bill',)
+('bill',)
+>>> #now its a tuple
+...
+>>>
