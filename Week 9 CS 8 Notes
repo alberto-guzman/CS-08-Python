@@ -1,0 +1,132 @@
+Python 3.5.1 |Anaconda 4.0.0 (x86_64)| (default, Dec  7 2015, 11:24:55)
+[GCC 4.2.1 (Apple Inc. build 5577)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> name = 'Dr.William C. Garrison'
+>>> name
+'Dr.William C. Garrison'
+>>> name[0]
+'D'
+>>> name[8]
+'a'
+>>> name[-5]
+'r'
+>>> for c in name:
+...     print(c+'-', end = '')
+...
+D-r-.-W-i-l-l-i-a-m- -C-.- -G-a-r-r-i-s-o-n->>>
+>>> #spaces are also counting
+...
+>>> name[3:]
+'William C. Garrison'
+>>> name
+'Dr.William C. Garrison'
+>>> #stirng does not get modified
+...
+>>> name[:3]
+'Dr.'
+>>> name[4:9]
+'illia'
+>>> len(name)
+22
+>>> len(name(4:11))
+  File "<stdin>", line 1
+    len(name(4:11))
+              ^
+SyntaxError: invalid syntax
+>>> len(name[4:11])
+7
+>>> name + 'IIII'
+'Dr.William C. GarrisonIIII'
+>>> name
+'Dr.William C. Garrison'
+>>> name[43]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> #index error
+...
+>>> name[0]='M'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> #strings are imutable!
+...
+>>> name[50:3000]
+''
+>>> #trys to adjust and give you something valid
+...
+>>> name[:3000]
+'Dr.William C. Garrison'
+>>> #gives me everything
+...
+>>> 'Willian' in name
+False
+>>> 3 in [1,2,3,4]
+True
+>>> #now for substrings
+...
+>>> [2,3] in [1,2,3,4]
+False
+>>> #its false because I am asking if the list 2,3 is in the list
+...
+>>> #this is because list can be nested
+...
+>>> name.upper()
+'DR.WILLIAM C. GARRISON'
+>>> name.lower()
+'dr.william c. garrison'
+>>> name.lstrip('ABCD')
+'r.William C. Garrison'
+>>> name.rstrip('rstlneo')
+'Dr.William C. Garri'
+>>> name
+'Dr.William C. Garrison'
+>>> name.isalpha()
+False
+>>> name.isspace()
+False
+>>> name == 'dw. william garrison'
+False
+>>> #compare two incase sensitive ways
+...
+>>> name.upper() == 'dar. william c. garrison'.upper()
+False
+>>> name.startswith('dr.')
+False
+>>> name.endswith('')
+True
+>>> name.find('')
+0
+>>> #first index that is a space
+...
+>>> name.find('X')
+-1
+>>> #says its invalid
+...
+>>> #slice
+...
+>>> name[name.find(''):]
+'Dr.William C. Garrison'
+>>> name[:name.find('')]
+''
+>>> #give me the first space
+...
+>>> name.split('')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: empty separator
+>>> name.split(' ')
+['Dr.William', 'C.', 'Garrison']
+>>> #splits by spaces
+...
+>>>
+>>> #is somethig an initial
+...
+>>> for name_part in name.split(' '):
+...     if name_part.ednswith('.') and len(name_part) == 2:
+...         print(name_part)
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+AttributeError: 'str' object has no attribute 'ednswith'
+>>>
