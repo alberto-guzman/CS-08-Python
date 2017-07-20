@@ -6,6 +6,7 @@ def main():
     account = 1000
     bet = 25
     bet = input_bet(bet, account)
+    print(name, 'has $', account)
     # while loop
     while account != 0:
         account += play_hand(account)
@@ -18,6 +19,7 @@ def main():
         else:
             account += play_hand(account)
             print(name, 'has $', account)
+    save(name, account)
 
 # play_hand function
 
@@ -32,10 +34,12 @@ def play_hand(account):
     shuffle_deck(deck)
     # shuffle_deck(deck)
 
+    # deal  dealers card
     dealer_card = string_of_card(deck[1])
     dealer_points += value_of_card(dealer_card)
     print('Dealer received card of value', dealer_card)
 
+    # deal players card
     player_card = string_of_card(deck[2])
     player_points += value_of_card(player_card)
     print('Player received card of value', player_card)
@@ -44,9 +48,11 @@ def play_hand(account):
     player_points += value_of_card(player_card)
     print('Player received card of value', player_card)
 
+    # print total
     print('Dealer total:', dealer_points)
     print(name, 'total:', player_points)
 
+    # ask player to hit or stay
     while player_points < 21:
         p_move = input('Move? (hit/stay)')
         if p_move == 'hit':
@@ -64,6 +70,7 @@ def play_hand(account):
     print('Dealer total:', dealer_points)
     print(name, 'total:', player_points)
 
+    # decide who wins
     if player_points > 21:
         print('Dealer wins')
         return -25
@@ -116,16 +123,21 @@ def input_bet(bet_amount, account):
                 return bet
 
 
+# create deck
 def new_deck():
     suit = ['\u2660', '\u2661', '\u2662', '\u2663']
     num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     deck = [(i, j) for j in num for i in suit]
     return deck
 
+# shuffle deck
+
 
 def shuffle_deck(deck):
     import random
     random.shuffle(deck)
+
+# return card value
 
 
 def value_of_card(card):
@@ -133,6 +145,8 @@ def value_of_card(card):
     for i in point_list:
         if card[1] == str(i[0]):
             return int(i[1])
+
+# return string value of card
 
 
 def string_of_hand(hand):
@@ -147,22 +161,22 @@ def value_of_hand(hand):
     return hand
 
 
-############################
-# coded this but was not able to intergrate.....
-############################
-
 def string_of_card(card):
     card = list(card)
     card[1] = str(card[1])
     card = ''.join(card)
     return card
 
+# create a save file
 
-def save(name, money):
+
+def save(name, account):
     file = open('blackjack.save.txt', 'w+')
     file.write(str(name) + '\n')
-    file.write(str(money) + '\n')
+    file.write(str(account) + '\n')
     file.close()
+
+# resume file
 
 
 def restore():
@@ -172,8 +186,9 @@ def restore():
     name = str(name)
     money = file.readline()
     money = money.rstrip('\n')
-    money = int(money)
-    return name, money
+    money = int(account)
+    return name, account
+
 
 # call to main
 main()
