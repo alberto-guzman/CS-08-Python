@@ -1,0 +1,6 @@
+{fullname}
+{address}
+Dear {fullname},
+Hi there, {shortname}! Hope all is well.
+Have a good summer,
+Alberto
